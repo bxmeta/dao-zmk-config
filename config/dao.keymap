@@ -27,10 +27,10 @@
 //                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
                         bindings = <
                  &kp EQUAL &kp N1  &kp N2  &kp N3 &kp N4  &kp N5             &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS
-        &kp TAB &kp ESC &kp Q  &kp W &kp E &kp R &kp T &kp Y         &kp U  &kp I     &kp O   &kp P    &kp LBKT &mt RSHFT RBKT
-                &kp LSHIFT &kp A &kp S &kp D &kp F &kp G &kp H         &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
+        &kp LSHIFT &kp ESC &kp Q  &kp W &kp E &kp R &kp T &kp Y         &kp U  &kp I     &kp O   &kp P    &kp LBKT &mt RSHFT RBKT
+                &kp TAB &kp A &kp S &kp D &kp F &kp G &kp H         &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
                  &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B &kp N         &kp M  &kp COMMA &kp DOT &kp FSLH &mt RALT BSLH
-                                 &kp LALT &kp LGUI &kp SPACE    &kp RET &tog LWR &kp BSPC
+                                 &kp LALT &kp LGUI &kp SPACE    &kp RET &kp BSPC &tog LWR 
                         >;
                 };
                 lower_layer {
@@ -41,10 +41,10 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6              &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 
-&kp TAB &kp ESC &none   &none &none   &none   &none               &none  &kp HOME   &kp UP   &kp END   &none   &none &none
-          &kp LSHIFT &none &none &none &none &none                 &none &kp LEFT &kp DOWN &kp RIGHT &kp RSHFT &none
+&kp LSHIFT &kp ESC &none   &none &none   &none   &none               &none  &kp HOME   &kp UP   &kp END   &none   &none &none
+          &kp TAB &none &none &none &none &none                 &none &kp LEFT &kp DOWN &kp RIGHT &kp RSHFT &none
            &kp LCTRL &kp LG(Z)  &kp LG(X) &kp LG(C)   &kp RG(V)   &none           &none    &kp PAGE_UP   &none   &kp PAGE_DOWN   &none   &none
-                                &kp LALT &kp LGUI &lt ADJ SPACE     &kp RET &tog LWR &kp BSPC
+                                &kp LALT &kp LGUI &lt ADJ SPACE     &kp RET  &kp BSPC &tog LWR
                         >;
                 };
 
