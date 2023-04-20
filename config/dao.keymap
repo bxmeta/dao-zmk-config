@@ -42,7 +42,7 @@
                         bindings = <
         &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6              &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 
 &kp LSHIFT &kp ESC &none   &none &none   &kp LBKT   &kp RBKT                &none  &kp HOME   &kp UP   &kp END   &none   &none &none
-          &kp TAB &none &none &none &kp SEMI &SQT                 &none &kp LEFT &kp DOWN &kp RIGHT &kp RSHFT &none
+          &kp TAB &none &none &none &kp SEMI &kp SQT                 &none &kp LEFT &kp DOWN &kp RIGHT &kp RSHFT &none
            &kp LCTRL &kp LG(Z)  &kp LG(X) &kp LG(C)   &kp RG(V)   &none           &none    &kp PAGE_UP   &none   &kp PAGE_DOWN   &none   &none
                                 &kp LALT &kp LGUI &lt ADJ SPACE     &kp RET  &kp BSPC &none
                         >;
