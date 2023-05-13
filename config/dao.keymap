@@ -12,56 +12,64 @@
 #define LWR 1
 #define ADJ 2
 
-&lt { quick_tap_ms = <200>; };
-&mt { quick_tap_ms = <200>; };
+&lt {
+    quick_tap_ms = <200>;
+};
+
+&mt {
+    quick_tap_ms = <200>;
+};
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  GUI |   ~  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  [   | GUI/] |
-//        | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CTRL/'|
-//        | LALT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
-//                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
-                        bindings = <
-                 &kp EQUAL &kp N1  &kp N2  &kp N3 &kp N4  &kp N5             &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS
-        &kp LSHIFT &kp ESC &kp Q  &kp W &kp E &kp R &kp T &kp Y         &kp U  &kp I     &kp O   &kp P    &kp LBKT &mt RSHFT RBKT
-                &kp TAB &kp A &kp S &kp D &kp F &kp G &kp H         &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
-                 &kp LCTRL  &kp Z &kp X &kp C &kp V &kp B &kp N         &kp M  &kp COMMA &kp DOT &kp FSLH &mt RALT BSLH
-                                 &kp LALT &kp LGUI &kp SPACE    &kp RET &mo LWR &kp BSPC 
-                        >;
-                };
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  GUI |   ~  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  [   | GUI/] |
+            //        | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CTRL/'|
+            //        | LALT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RALT |
+            //                           | RSE | SPC | LWR |   | LWR | BKSP | RSE |
 
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |     |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |
-//       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
-//       |  =  |  1  | §    2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6              &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 
-&kp LSHIFT &kp ESC &none   &none &none   &kp LBKT   &kp RBKT                &none  &kp HOME   &kp UP   &kp END   &none   &none &none
-          &kp TAB &none &none &none &kp SEMI &kp SQT                 &none &kp LEFT &kp DOWN &kp RIGHT &kp RSHFT &none
-           &kp LCTRL &kp LG(Z)  &kp LG(X) &kp LG(C)   &kp RG(V)   &none           &none    &kp PAGE_UP   &none   &kp PAGE_DOWN   &none   &none
-                                &kp LALT &kp LGUI &lt ADJ SPACE     &kp RET  &none &kp BSPC
-                        >;
-                };
-
-                adjust_layer {
-// -----------------------------------------------------------------------------------------
-// | RST | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR | RST |
-//       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
-//       |      |     |     |     |     |     |   |     |     |     |     |     |      |
-//                          |     |     |     |   |     |     |     |
-                        bindings = <
-          &none &none &none &none &none &none &none &none &none &none &none &none
-   &sys_reset &bootloader  &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &bootloader &sys_reset
-          &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR
-          &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &none
-                                                                    &none &none &none   &none &none &none
-                        >;
-                };
+            bindings = <
+            &kp EQUAL  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5     &kp N6   &kp N7     &kp N8   &kp N9    &kp N0       &kp MINUS
+&kp LSHIFT    &kp ESC   &kp Q   &kp W     &kp E     &kp R      &kp T      &kp Y    &kp U      &kp I    &kp O     &kp P        &kp LBKT  &mt RSHFT RBKT
+              &kp TAB   &kp A   &kp S     &kp D     &kp F      &kp G      &kp H    &kp J      &kp K    &kp L  &kp SEMI    &mt RALT SQT
+            &kp LCTRL   &kp Z   &kp X     &kp C     &kp V      &kp B      &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &mt RCTRL BSLH
+                                       &kp LALT  &kp LGUI  &kp SPACE    &kp RET  &mo LWR   &kp BSPC
+            >;
         };
+
+        lower_layer {
+            // -----------------------------------------------------------------------------------------
+            // |     |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 |
+            //       |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
+            //       |  =  |  1  | §    2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |     |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+               &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7       &kp F8    &kp F9        &kp F10    &kp F11  &kp F12
+&kp LSHIFT    &kp ESC      &none      &none      &none   &kp LBKT       &kp RBKT      &none     &kp HOME    &kp UP        &kp END      &none    &none  &none
+              &kp TAB      &none      &none      &none   &kp SEMI        &kp SQT      &none     &kp LEFT  &kp DOWN      &kp RIGHT  &kp RSHFT    &none
+            &kp LCTRL  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp RG(V)          &none      &none  &kp PAGE_UP     &none  &kp PAGE_DOWN      &none    &none
+                                              &kp LALT   &kp LGUI  &lt ADJ SPACE    &kp RET        &none  &kp BSPC
+            >;
+        };
+
+        adjust_layer {
+            // -----------------------------------------------------------------------------------------
+            // | RST | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR | RST |
+            //       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
+            //       |      |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                          |     |     |     |   |     |     |     |
+
+            bindings = <
+                  &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none        &none
+&sys_reset  &bootloader         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none  &bootloader  &sys_reset
+             &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0   &bt BT_CLR
+                  &none         &none         &none         &none         &none         &none           &none         &none         &none         &none         &none        &none
+                                                            &none         &none         &none           &none         &none         &none
+            >;
+        };
+    };
 };
